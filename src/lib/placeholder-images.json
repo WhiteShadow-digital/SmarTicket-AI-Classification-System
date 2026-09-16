@@ -1,0 +1,22 @@
+{
+  "placeholderImages": [
+    {
+      "id": "salon-hero",
+      "description": "High-end luxury hair salon interior",
+      "imageUrl": "https://picsum.photos/seed/salon1/1200/800",
+      "imageHint": "luxury salon"
+    },
+    {
+      "id": "salon-vision",
+      "description": "Hairdresser meticulously applying product",
+      "imageUrl": "https://picsum.photos/seed/salon2/800/600",
+      "imageHint": "hairstylist working"
+    },
+    {
+      "id": "salon-mission",
+      "description": "Organized professional hair products on shelf",
+      "imageUrl": "https://picsum.photos/seed/salon3/800/600",
+      "imageHint": "salon products"
+    }
+  ]
+}

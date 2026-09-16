@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "Ticket": {
+      "title": "Ticket",
+      "type": "object",
+      "description": "A support ticket classified by AI with severity detection.",
+      "properties": {
+        "id": { "type": "string" },
+        "content": { "type": "string", "description": "The original complaint text." },
+        "category": { "type": "string", "enum": ["HR", "IT", "Operations", "Finance"] },
+        "severity": { "type": "string", "enum": ["Low", "Medium", "High", "Critical"] },
+        "tone": { "type": "string", "enum": ["Formal", "Friendly", "Urgent"] },
+        "aiResponse": { "type": "string", "description": "The AI-generated response." },
+        "status": { "type": "string", "enum": ["Open", "Resolved"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["content", "category", "severity", "aiResponse", "createdAt"]
+    }
+  },
+  "auth": {
+    "providers": ["anonymous"]
+  },
+  "firestore": {
+    "/tickets/{ticketId}": {
+      "schema": { "$ref": "#/entities/Ticket" },
+      "description": "Collection of support tickets."
+    }
+  }
+}

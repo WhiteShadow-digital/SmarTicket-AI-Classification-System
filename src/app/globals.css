@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 6%;
+    --foreground: 190 100% 95%;
+    --card: 220 30% 10%;
+    --card-foreground: 190 100% 95%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 190 100% 95%;
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 30% 6%;
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 190 100% 95%;
+    --muted: 220 30% 15%;
+    --muted-foreground: 190 20% 60%;
+    --accent: 185 100% 50%;
+    --accent-foreground: 220 30% 6%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 185 100% 50% / 0.2;
+    --input: 185 100% 50% / 0.1;
+    --ring: 185 100% 50%;
+    --radius: 0rem;
+  }
+
+  /* Force Persona 3 Aesthetic as Global Standard */
+  [data-theme='visionary'], :root {
+    --primary: 190 100% 50%;
+    --background: 225 45% 5%;
+    --foreground: 180 100% 98%;
+    --card: 225 45% 8%;
+    --border: 190 100% 50% / 0.3;
+    --muted: 190 100% 50% / 0.1;
+    --accent: 45 100% 50%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased transition-colors duration-500 overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 20% 20%, hsla(190, 100%, 50%, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, hsla(190, 100%, 50%, 0.05) 0%, transparent 40%);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline uppercase italic tracking-tighter;
+  }
+}
+
+/* Persona 3 Angled Styles */
+.p3-angled-box {
+  clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+}
+
+.p3-nav-skew {
+  transform: skewX(-15deg);
+}
+
+.p3-nav-skew-content {
+  transform: skewX(15deg);
+}
+
+.p3-glow-border {
+  box-shadow: 0 0 15px hsla(190, 100%, 50%, 0.3);
+}
+
+.p3-text-shadow {
+  text-shadow: 2px 2px 0px hsla(225, 45%, 5%, 1);
+}
+
+.glass-card {
+  @apply bg-card/60 backdrop-blur-xl border border-primary/20;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/40 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
